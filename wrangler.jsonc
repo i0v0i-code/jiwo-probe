@@ -1,16 +1,19 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "mmwx-probe",
+  "name": "jiwo-probe",
   "main": "worker/index.ts",
   "compatibility_date": "2026-07-31",
   "workers_dev": true,
   "preview_urls": true,
   "keep_vars": true,
+
   "vars": {
+    "MMWX_ORIGIN": "https://mmw.ioio.de",
     "PROBE_PING_DEFAULT_TARGETS": "平均延迟，内地延迟，海外延迟",
     "PROBE_PING_GROUP_COUNT": "3",
     "PROBE_PING_INTL_TARGETS": "intl-web-cloudflare,intl-web-google,intl-tg-dc5"
   },
+
   "durable_objects": {
     "bindings": [
       {
@@ -19,19 +22,23 @@
       }
     ]
   },
+
   "exports": {
     "ProbeHub": {
       "type": "durable-object",
       "storage": "sqlite"
     }
   },
+
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
     "not_found_handling": "single-page-application",
     "run_worker_first": ["/api/*", "/login"]
-  }
+  },
+
   "observability": {
+    "enabled": true,
     "logs": {
       "enabled": true,
       "head_sampling_rate": 1,
@@ -43,5 +50,5 @@
       "head_sampling_rate": 1,
       "persist": true
     }
-  },
+  }
 }
