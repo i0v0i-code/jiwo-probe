@@ -8,7 +8,7 @@
   "keep_vars": true,
 
   "vars": {
-    "MMWX_ORIGIN": "https://mmw.ioio.de",
+    "MMWX_ORIGIN": "https://mmw.iooio.de",
     "PROBE_PING_DEFAULT_TARGETS": "平均延迟，内地延迟，海外延迟",
     "PROBE_PING_GROUP_COUNT": "3",
     "PROBE_PING_INTL_TARGETS": "intl-web-cloudflare,intl-web-google,intl-tg-dc5"
